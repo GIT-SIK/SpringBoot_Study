@@ -1,2 +1,6 @@
 # Spring_JPA_Study
-Spring boot + JPA + Oracle DB
+Spring Boot  
+ㄴ Slf4j  
+JPA  
+Oracle DB  
+Thymeleaf  
