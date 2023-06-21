@@ -31,7 +31,7 @@ class IndexRepositoryTest {
         System.out.println("SAVE : "+ testTableSave);
         System.out.println(indexRepository.findByCol1(dcol1));
 
-       // Assertions.assertEquals(dcol1, testTableSave.getCol1());
+        Assertions.assertEquals(dcol1, testTableSave.getCol1());
        // Assertions.assertEquals(5,indexRepository.findByCol1(5));
     }
 }
