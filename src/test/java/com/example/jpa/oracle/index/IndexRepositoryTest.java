@@ -20,6 +20,7 @@ class IndexRepositoryTest {
     private IndexRepository indexRepository;
 
 
+
     @Test
     @Rollback(false) // 테스트 종료 이후 ROLLBACK 비활성화
     public void indexSave(){
