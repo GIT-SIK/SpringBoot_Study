@@ -28,6 +28,12 @@ public class IndexController {
         return "col.html";
     }
 
+    @GetMapping("/v/all")
+    public String IndexAll(Model model) {
+        log.info("출력 : " + indexService.findAll());
+        return "col.html";
+    }
+
     @RequestMapping(value = "/i/col", method = RequestMethod.POST)
     public ModelAndView IndexICol(ModelAndView mav, @RequestParam(value="col1", required = false) String col1) {
         log.info("입력 : " + col1);
