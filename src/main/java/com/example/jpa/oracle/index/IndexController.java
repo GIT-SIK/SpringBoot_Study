@@ -15,23 +15,24 @@ public class IndexController {
     @Autowired
     IndexService indexService;
 
-    @GetMapping("/v/log")
+    @GetMapping("/v/test")
     public String IndexLog(Model m){
-        String sLog = " #### INDEX LOG TEST ####";
+        String sLog = " #### INDEX TEST ####";
         log.info(sLog);
         m.addAttribute("logdata",sLog );
         return "log.html";
     }
 
     @GetMapping("/v/col")
-    public String IndexCol(Model model) {
+    public String IndexCol(Model m) {
         return "col.html";
     }
 
     @GetMapping("/v/all")
-    public String IndexAll(Model model) {
+    public String IndexAll(Model m) {
         log.info("출력 : " + indexService.findAll());
-        return "col.html";
+        m.addAttribute("logdata",indexService.findAll() );
+        return "log.html";
     }
 
     @RequestMapping(value = "/i/col", method = RequestMethod.POST)
