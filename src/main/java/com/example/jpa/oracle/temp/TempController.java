@@ -1,4 +1,4 @@
-package com.example.jpa.oracle.index;
+package com.example.jpa.oracle.temp;
 
 import com.example.jpa.oracle.domain.TestTable;
 import lombok.extern.slf4j.Slf4j;
@@ -10,10 +10,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @Slf4j
-public class IndexController {
+public class TempController {
 
     @Autowired
-    IndexService indexService;
+    TempService tempService;
 
     @GetMapping("/v/test")
     public String IndexLog(Model m){
@@ -24,23 +24,23 @@ public class IndexController {
     }
 
     @GetMapping("/v/col")
-    public String IndexCol(Model m) {
-        return "col.html";
+    public String TestCol(Model m) {
+        return "col";
     }
 
     @GetMapping("/v/all")
-    public String IndexAll(Model m) {
-        log.info("출력 : " + indexService.findAll());
-        m.addAttribute("print",indexService.findAll() );
+    public String TestAll(Model m) {
+        log.info("출력 : " + tempService.findAll());
+        m.addAttribute("print",tempService.findAll() );
         return "print";
     }
 
     @RequestMapping(value = "/i/col", method = RequestMethod.POST)
-    public ModelAndView IndexICol(ModelAndView mav, @RequestParam(value="col1", required = false) String col1) {
+    public ModelAndView TestICol(ModelAndView mav, @RequestParam(value="col1", required = false) String col1) {
         log.info("입력 : " + col1);
         TestTable tt = new TestTable();
         try {
-            tt = indexService.findbyCol1(Integer.parseInt(col1));
+            tt = tempService.findbyCol1(Integer.parseInt(col1));
             log.info("처리 : FindBy");
         } catch (Exception e) {
             System.out.println(e);

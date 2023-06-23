@@ -1,4 +1,4 @@
-package com.example.jpa.oracle.index;
+package com.example.jpa.oracle.temp;
 
 import com.example.jpa.oracle.domain.TestTable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,13 +7,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class IndexService {
+public class TempService {
 
     @Autowired
-    IndexRepository indexRepository;
+    TempRepository tempRepository;
 
-    public List<TestTable> findAll() { return indexRepository.findAll(); }
+    public List<TestTable> findAll() { return tempRepository.findAll(); }
     public TestTable findbyCol1(int x) {
-        return indexRepository.findByCol1(x);
+        return tempRepository.findByCol1(x);
     }
 }
