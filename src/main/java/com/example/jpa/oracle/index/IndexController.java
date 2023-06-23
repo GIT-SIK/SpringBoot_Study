@@ -20,7 +20,7 @@ public class IndexController {
         String sLog = " #### INDEX TEST ####";
         log.info(sLog);
         m.addAttribute("logdata",sLog );
-        return "log.html";
+        return "log";
     }
 
     @GetMapping("/v/col")
@@ -31,8 +31,8 @@ public class IndexController {
     @GetMapping("/v/all")
     public String IndexAll(Model m) {
         log.info("출력 : " + indexService.findAll());
-        m.addAttribute("logdata",indexService.findAll() );
-        return "log.html";
+        m.addAttribute("print",indexService.findAll() );
+        return "print";
     }
 
     @RequestMapping(value = "/i/col", method = RequestMethod.POST)
@@ -49,7 +49,7 @@ public class IndexController {
 
         log.info("출력 : " + tt);
 
-        mav.setViewName("col.html");
+        mav.setViewName("col");
         return mav;
     }
 
