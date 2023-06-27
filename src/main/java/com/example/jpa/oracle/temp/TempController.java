@@ -18,7 +18,7 @@ public class TempController {
     @GetMapping("/v/test")
     public String IndexLog(Model m){
         String sLog = " #### INDEX TEST ####";
-        log.info(sLog);
+        log.info("출력 : " + sLog);
         m.addAttribute("logdata",sLog );
         return "log";
     }
@@ -31,7 +31,7 @@ public class TempController {
     @GetMapping("/v/all")
     public String TestAll(Model m) {
         log.info("출력 : " + tempService.findAll());
-        m.addAttribute("print",tempService.findAll() );
+        m.addAttribute("print",tempService.findAll());
         return "print";
     }
 
