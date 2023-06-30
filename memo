@@ -1,16 +1,21 @@
 * ORACLE [MAC]
-colima
-docker
+    - colima
+    - docker
 
 * ELK [Docker]
-
 boot log file -> filebeat -> logstash -> elasticsearch
 
-docker pull docker.elastic.co/beats/filebeat:7.6.2
-docker pull docker.elastic.co/logstash/logstash:7.6.2
-docker pull docker.elastic.co/elasticsearch/elasticsearch:7.6.2
-docker pull docker.elastic.co/kibana/kibana:7.6.2
+    - docker_pull
+        docker pull docker.elastic.co/beats/filebeat:7.6.2
+        docker pull docker.elastic.co/logstash/logstash:7.6.2
+        docker pull docker.elastic.co/elasticsearch/elasticsearch:7.6.2
+        docker pull docker.elastic.co/kibana/kibana:7.6.2
 
-RUN - file:memo_run
+    - docker_run
+        file:memo_run
+
+** ISSUE
+Kibana => AMD64 -> COLIMA (bad alloc)
+
 
 
