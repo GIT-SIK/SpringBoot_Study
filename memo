@@ -15,7 +15,7 @@ boot log file -> filebeat -> logstash -> elasticsearch
         file:memo_run
 
 ** ISSUE
-Kibana => AMD64 -> COLIMA (bad alloc)
+Kibana
 
 
 
