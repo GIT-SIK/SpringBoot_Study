@@ -15,7 +15,7 @@ boot log file -> filebeat -> logstash -> elasticsearch
         file:memo_run
 
 ** ISSUE
-Kibana
+Kibana => !memory(colima), x86_64
 
 
 
