@@ -2,6 +2,10 @@
     - colima
     - docker
 
+* colima
+  - Refused
+    Colima stop or limactl stop -f colima
+
 * ELK [Docker]
 boot log file -> filebeat -> logstash -> elasticsearch
 
